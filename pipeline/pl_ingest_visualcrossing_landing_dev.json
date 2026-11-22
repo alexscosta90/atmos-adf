@@ -67,7 +67,7 @@
 								"type": "Expression"
 							},
 							"file_name": {
-								"value": "@concat('atmos_', pipeline().parameters.city, '_', formatDateTime(utcNow(), 'yyyyMMddHHmmss'), '.json')",
+								"value": "@toLower(concat('atmos_', pipeline().parameters.city, '_', formatDateTime(utcNow(), 'yyyyMMddHHmmss'), '.json'))",
 								"type": "Expression"
 							}
 						}
@@ -77,10 +77,12 @@
 		],
 		"parameters": {
 			"city": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "Bahia"
 			},
 			"date": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "2026-05-22"
 			}
 		},
 		"folder": {
